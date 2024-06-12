@@ -24,57 +24,111 @@ namespace R.O.B.O.Pages
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
-        /// divBracoDireito control.
+        /// txtCotoveloDireito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divBracoDireito;
+        protected global::System.Web.UI.WebControls.TextBox txtCotoveloDireito;
 
         /// <summary>
-        /// txtBracoDireito control.
+        /// txtPulsoDireito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBracoDireito;
+        protected global::System.Web.UI.WebControls.TextBox txtPulsoDireito;
 
         /// <summary>
-        /// divBracoEsquerdo control.
+        /// txtCotoveloEsquerdo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divBracoEsquerdo;
+        protected global::System.Web.UI.WebControls.TextBox txtCotoveloEsquerdo;
 
         /// <summary>
-        /// txtBracoEsquerdo control.
+        /// txtPulsoEsquerdo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBracoEsquerdo;
+        protected global::System.Web.UI.WebControls.TextBox txtPulsoEsquerdo;
 
         /// <summary>
-        /// divCabeca control.
+        /// txtInclinacaoCabeca control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divCabeca;
+        protected global::System.Web.UI.WebControls.TextBox txtInclinacaoCabeca;
 
         /// <summary>
-        /// txtCabeca control.
+        /// txtRotacaoCabeca control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCabeca;
+        protected global::System.Web.UI.WebControls.TextBox txtRotacaoCabeca;
+
+        /// <summary>
+        /// dpdPulsoDireito control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpdPulsoDireito;
+
+        /// <summary>
+        /// dpdCotoveloDireito control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpdCotoveloDireito;
+
+        /// <summary>
+        /// dpdPulsoEsquerdo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpdPulsoEsquerdo;
+
+        /// <summary>
+        /// dpdCotoveloEsquerdo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpdCotoveloEsquerdo;
+
+        /// <summary>
+        /// dpdInclinacaoCabeca control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpdInclinacaoCabeca;
+
+        /// <summary>
+        /// dpdRotacaoCabeca control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpdRotacaoCabeca;
     }
 }

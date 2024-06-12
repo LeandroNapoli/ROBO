@@ -6,27 +6,28 @@
 <head runat="server">
     <title>R.O.B.O</title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-
-
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-    <asp:ContentPlaceHolder ID="JavaScriptContent" runat="server">
-    </asp:ContentPlaceHolder>
+    <link href="Content/CustomCss/default.css" rel="stylesheet" />
+    <script src="../Scripts/bootstrap.min.js"></script>
 </head>
 <body>
-
-    <div class="container">
-        <div class="row">
-            <nav class="navbar bg-primary text-center">
-                <h3>R.O.B.O. (Robô Operacional Binariamente Orientado)</h3>
-            </nav>
+    <form id="form1" class="container capsula" runat="server">
+        <div>
+            <div class="bg-primary text-center">
+                <h3 class="text-white">R.O.B.O. (Robô Operacional Binariamente Orientado)</h3>
+            </div>
         </div>
-    </div>
-    <div>
-        <form id="form1" runat="server">
+        <main>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-        </form>
-    </div>
+        </main>
+
+        <div>
+            <div class="divider"></div>
+            <footer class="card-footer">
+                <p2>Leandro Avaliação Narwal - 2024</p2>
+            </footer>
+        </div>
+    </form>
+
 </body>
 </html>

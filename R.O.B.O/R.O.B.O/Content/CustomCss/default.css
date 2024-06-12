@@ -1,0 +1,13 @@
+﻿.divider {
+    border-bottom: 1px solid #bbb;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.capsula {
+    margin-top: 5px;
+    border-top: 1px solid #bbb;
+    border-left: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+}
