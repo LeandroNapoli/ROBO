@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R.O.B.O", "R.O.B.O\R.O.B.O.csproj", "{F84466C0-FEA1-4042-A779-C2F5281D87EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R.O.B.O.Api", "R.O.B.O.Api\R.O.B.O.Api.csproj", "{1063EC20-CD86-4099-8587-87BB7331DF08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F84466C0-FEA1-4042-A779-C2F5281D87EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F84466C0-FEA1-4042-A779-C2F5281D87EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F84466C0-FEA1-4042-A779-C2F5281D87EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1063EC20-CD86-4099-8587-87BB7331DF08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1063EC20-CD86-4099-8587-87BB7331DF08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1063EC20-CD86-4099-8587-87BB7331DF08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1063EC20-CD86-4099-8587-87BB7331DF08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
