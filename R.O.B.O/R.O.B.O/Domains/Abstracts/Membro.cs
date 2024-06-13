@@ -4,8 +4,8 @@ namespace R.O.B.O.Domains.Abstracts
 {
     public abstract class Membro
     {
-        public int Rotacao { get; set; } = 3;
-        public int Estado { get; set; } = 1;
+        public int Rotacao { get; set; }
+        public int Estado { get; set; }
         public Membros Nome { get; set; }
         public bool VerificarRotacao(int rotacao)
         {

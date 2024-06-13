@@ -103,7 +103,9 @@
     </Compile>
     <Compile Include="Domains\Abstracts\Membro.cs" />
     <Compile Include="Domains\Braco.cs" />
+    <Compile Include="Domains\Cabeca.cs" />
     <Compile Include="Enums\EstadoCotovelo.cs" />
+    <Compile Include="Enums\Inclinacao.cs" />
     <Compile Include="Enums\Membros.cs" />
     <Compile Include="Enums\Rotacao.cs" />
     <Compile Include="Pages\Robo.aspx.cs">
