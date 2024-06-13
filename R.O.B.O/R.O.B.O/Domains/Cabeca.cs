@@ -2,20 +2,20 @@
 using R.O.B.O.Enums;
 using System;
 
-
 namespace R.O.B.O.Domains
 {
     public class Cabeca : Membro
     {
-        public Cabeca() 
+        public Cabeca()
         {
+            Nome = Membros.Cabeca;
             Estado = (int)Inclinacao.EmRepouso;
             Rotacao = (int)Enums.Rotacao.EmRepouso;
         }
 
         public override void Rotacionar(int rotacao)
         {
-            if(Estado != (int)Inclinacao.ParaBaixo)
+            if (Estado != (int)Inclinacao.ParaBaixo)
             {
                 VerificarRotacao(rotacao);
                 base.Rotacionar(rotacao);
