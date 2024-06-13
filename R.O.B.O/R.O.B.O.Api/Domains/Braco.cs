@@ -1,6 +1,5 @@
-﻿using System;
-using R.O.B.O.Domains.Abstracts;
-using R.O.B.O.Enums;
+﻿using R.O.B.O.Api.Domains.Abstracts;
+using R.O.B.O.Api.Enums;
 
 namespace R.O.B.O.Domains
 {
@@ -13,7 +12,7 @@ namespace R.O.B.O.Domains
             {
                 Cotovelo.Nome = Membros.Cotovelo;
                 Cotovelo.Estado = (int)EstadoCotovelo.EmRepouso; 
-                Cotovelo.Rotacao = (int)Enums.Rotacao.EmRepouso; 
+                Cotovelo.Rotacao = (int)Api.Enums.Rotacao.EmRepouso; 
             }
         }
         public Membro Pulso
@@ -22,7 +21,7 @@ namespace R.O.B.O.Domains
             set
             {
                 Pulso.Nome = Membros.Pulso;
-                Pulso.Rotacao = (int)Enums.Rotacao.EmRepouso;
+                Pulso.Rotacao = (int)Api.Enums.Rotacao.EmRepouso;
             }
         }
 

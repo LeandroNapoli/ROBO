@@ -2,11 +2,10 @@
 
 namespace R.O.B.O.Api.Controllers
 {
-    public class RoboController : Controller
+    [ApiController]
+    [Route("[controller]")]
+    public class RoboController : ControllerBase
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+
     }
 }

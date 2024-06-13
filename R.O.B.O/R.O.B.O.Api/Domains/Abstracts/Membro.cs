@@ -1,6 +1,6 @@
-﻿using R.O.B.O.Enums;
+﻿using R.O.B.O.Api.Enums;
 
-namespace R.O.B.O.Domains.Abstracts
+namespace R.O.B.O.Api.Domains.Abstracts
 {
     public abstract class Membro
     {
