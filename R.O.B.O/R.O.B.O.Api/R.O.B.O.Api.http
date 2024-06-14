@@ -1,4 +1,4 @@
-@R.O.B.O.Api_HostAddress = http://localhost:5242
+@R.O.B.O.Api_HostAddress = https://localhost:7120
 
 GET {{R.O.B.O.Api_HostAddress}}/weatherforecast/
 Accept: application/json
