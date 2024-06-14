@@ -4,7 +4,7 @@ namespace R.O.B.O.Api.Repositories.IRepositories
 {
     public interface IRoboRepository
     {
-        Task AtualizarMembros(IEnumerable<Membro> membro);
-        Task<IEnumerable<Membro>> ObterMembros();
+        void AtualizarMembros(IEnumerable<Membro> membro);
+        HashSet<Membro> ObterMembros();
     }
 }

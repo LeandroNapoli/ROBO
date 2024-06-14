@@ -1,12 +1,13 @@
-﻿using R.O.B.O.Api.Domains.Abstracts;
+﻿using Microsoft.AspNetCore.Mvc;
+using R.O.B.O.Api.Domains.Abstracts;
 using R.O.B.O.Api.Services;
 using R.O.B.O.Api.Services.IServices;
-using System.Web.Http;
+using System.Text.Json;
 
 namespace R.O.B.O.Api.Controllers
 {
-    [RoutePrefix("robo")]
-    public class RoboController : ApiController
+    [Route("robo")]
+    public class RoboController : ControllerBase
     {
         private IRoboService _roboService;
 
@@ -17,31 +18,32 @@ namespace R.O.B.O.Api.Controllers
 
         [HttpGet]
         [Route("obter-membros")]
-        public async Task<IHttpActionResult> ObterMembros()
+        public HttpResponseMessage ObterMembros()
         {
             try
             {
-                var membros = await _roboService.ObterMembros();
-                return Ok(membros);
+                var membros = _roboService.ObterMembros();
+                var content = new StringContent(JsonSerializer.Serialize(membros));
+                return new HttpResponseMessage() { Content = content, StatusCode = System.Net.HttpStatusCode.OK };
             }
             catch (Exception ex)
             {
-                return InternalServerError(ex);
+                return new HttpResponseMessage() { Content = new StringContent(JsonSerializer.Serialize(ex)), StatusCode = System.Net.HttpStatusCode.InternalServerError };
             }
         }
 
         [HttpPut]
         [Route("atualizar-membros")]
-        public async Task<IHttpActionResult> AtualizarMembros(IEnumerable<Membro> membro)
+        public HttpResponseMessage AtualizarMembros(IEnumerable<Membro> membro)
         {
             try
             {
-                await _roboService.AtualizarMembros(membro);
-                return Ok();
+                _roboService.AtualizarMembros(membro);
+                return new HttpResponseMessage(System.Net.HttpStatusCode.OK);
             }
             catch (Exception ex)
             {
-                return InternalServerError(ex);
+                return new HttpResponseMessage() { Content = new StringContent(JsonSerializer.Serialize(ex)), StatusCode = System.Net.HttpStatusCode.InternalServerError };
             }
         }
     }

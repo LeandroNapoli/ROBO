@@ -2,7 +2,7 @@
 
 namespace R.O.B.O.Api.Domains.Abstracts
 {
-    public abstract class Membro
+    public class Membro
     {
         public int Rotacao { get; set; }
         public int Estado { get; set; }

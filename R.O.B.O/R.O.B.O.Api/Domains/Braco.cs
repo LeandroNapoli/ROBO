@@ -1,29 +1,19 @@
 ﻿using R.O.B.O.Api.Domains.Abstracts;
 using R.O.B.O.Api.Enums;
 
-namespace R.O.B.O.Domains
+namespace R.O.B.O.Api.Domains
 {
     public class Braco : Membro
     {
-        public Membro Cotovelo
+        public Braco()
         {
-            get { return Cotovelo; }
-            set 
-            {
-                Cotovelo.Nome = Membros.Cotovelo;
-                Cotovelo.Estado = (int)EstadoCotovelo.EmRepouso; 
-                Cotovelo.Rotacao = (int)Api.Enums.Rotacao.EmRepouso; 
-            }
+            Cotovelo = new Membro() { Nome = Membros.Cotovelo, Estado = (int)EstadoCotovelo.EmRepouso, Rotacao = (int)Enums.Rotacao.EmRepouso };
+            Pulso = new Membro() { Nome = Membros.Pulso, Rotacao = (int)Enums.Rotacao.EmRepouso };
         }
-        public Membro Pulso
-        {
-            get { return Pulso; }
-            set
-            {
-                Pulso.Nome = Membros.Pulso;
-                Pulso.Rotacao = (int)Api.Enums.Rotacao.EmRepouso;
-            }
-        }
+
+        public Membro Cotovelo { get; set; }
+        public Membro Pulso { get; set; }
+
 
         public void Rotacionar(int rotacao, Membro membro)
         {
@@ -37,7 +27,7 @@ namespace R.O.B.O.Domains
 
         public void VerificarRotacaoPulso()
         {
-            if(Cotovelo.Estado != (int)EstadoCotovelo.FortementeContraido)
+            if (Cotovelo.Estado != (int)EstadoCotovelo.FortementeContraido)
             {
                 throw new ArgumentException($"O pulso não pode ser rotacionado, pois o estado atual do Cotovelo não é Fortemente Contraído");
             }

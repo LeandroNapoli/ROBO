@@ -1,0 +1,67 @@
+﻿using R.O.B.O.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Text.Json;
+using R.O.B.O.Domains;
+using R.O.B.O.Services.IServices;
+
+namespace R.O.B.O.Services
+{
+    public class RoboApiService : IRoboApiService
+    {
+        private string _urlPadraoApi = ConfigurationManager.AppSettings["R.O.B.O.Api"].ToString();
+        private const string _urlPadraoRobo = "robo";
+        private HttpClient _httpClient;
+
+        public RoboApiService()
+        {
+            _httpClient = new HttpClient();
+        }
+
+        public async Task<IEnumerable<MembroViewModel>> ObterMembros()
+        {
+            try
+            {
+                var resultado = await _httpClient.GetAsync($"{_urlPadraoApi}{_urlPadraoRobo}/obter-membros");
+
+                if (resultado.StatusCode != System.Net.HttpStatusCode.OK)
+                    throw new Exception("Erro ao obter Membros do R.O.B.O");
+
+                var data = resultado.Content.ReadAsStringAsync().ToString();
+
+                return JsonSerializer.Deserialize<IEnumerable<MembroViewModel>>(data);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task AtualizarMembros(IEnumerable<Membro> membros)
+        {
+            try
+            {
+                var stringContent = ObterContent(membros);
+
+                var resultado = await _httpClient.PutAsync($"{_urlPadraoApi}/{_urlPadraoRobo}/atualizar-membros", stringContent);
+
+                if (resultado.StatusCode != System.Net.HttpStatusCode.OK)
+                    throw new Exception("Erro ao obter Membros do R.O.B.O");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private StringContent ObterContent(IEnumerable<Membro> membros)
+        {
+            var content = JsonSerializer.Serialize(membros);
+            return new StringContent(content);
+        }
+    }
+}

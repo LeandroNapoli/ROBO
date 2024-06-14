@@ -5,6 +5,7 @@
         Cotovelo,
         Pulso,
         Cabeca,
-        Braco
+        BracoEsquerdo,
+        BracoDireito
     }
 }

@@ -14,12 +14,12 @@ namespace R.O.B.O.Api.Services
         {
             _repository = new RoboRepository();
         }
-        public async Task AtualizarMembros(IEnumerable<Membro> membros) => await _repository.AtualizarMembros(membros);
+        public void AtualizarMembros(IEnumerable<Membro> membros) => _repository.AtualizarMembros(membros);
 
 
-        public async Task<IEnumerable<MembroViewModel>> ObterMembros()
+        public IEnumerable<MembroViewModel> ObterMembros()
         {
-            var membros = await _repository.ObterMembros();
+            var membros = _repository.ObterMembros();
             var membrosViewModel = new HashSet<MembroViewModel>();
 
             foreach (var membro in membros)

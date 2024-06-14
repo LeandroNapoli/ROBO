@@ -1,24 +1,20 @@
 ﻿using R.O.B.O.Domains;
 using R.O.B.O.Services.IServices;
 using R.O.B.O.ViewModels;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 
 namespace R.O.B.O.Services
 {
     public class RoboService : IRoboService
     {
-        public Task AtualizarEstadosDosMembros(IEnumerable<Membro> membroViews)
+        private IRoboApiService _roboApiService;
+        public RoboService()
         {
-            throw new NotImplementedException();
+            _roboApiService = new RoboApiService();
         }
+        public async Task AtualizarEstadosDosMembros(IEnumerable<Membro> membroViews) => await _roboApiService.AtualizarMembros(membroViews);
 
-        public Task<IEnumerable<MembroViewModel>> ObterEstadosDosMembros()
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<IEnumerable<MembroViewModel>> ObterEstadosDosMembros() => await _roboApiService.ObterMembros();
     }
 }

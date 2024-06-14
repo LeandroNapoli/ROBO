@@ -1,7 +1,7 @@
 ﻿using R.O.B.O.Api.Domains.Abstracts;
 using R.O.B.O.Api.Enums;
 
-namespace R.O.B.O.Domains
+namespace R.O.B.O.Api.Domains
 {
     public class Cabeca : Membro
     {
@@ -9,7 +9,7 @@ namespace R.O.B.O.Domains
         {
             Nome = Membros.Cabeca;
             Estado = (int)Inclinacao.EmRepouso;
-            Rotacao = (int)Api.Enums.Rotacao.EmRepouso;
+            Rotacao = (int)Enums.Rotacao.EmRepouso;
         }
 
         public override void Rotacionar(int rotacao)
