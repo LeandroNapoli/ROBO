@@ -1,7 +1,8 @@
-﻿using R.O.B.O.Api.Domains.Abstracts;
-using R.O.B.O.Api.Enums;
+﻿using R.O.B.O.Core.Domains.Abstracts;
+using R.O.B.O.Core.Enums;
+using System;
 
-namespace R.O.B.O.Api.Domains
+namespace R.O.B.O.Core.Domains
 {
     public class Cabeca : Membro
     {

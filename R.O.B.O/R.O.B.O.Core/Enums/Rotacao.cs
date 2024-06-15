@@ -1,4 +1,4 @@
-﻿namespace R.O.B.O.Api.Enums
+﻿namespace R.O.B.O.Core.Enums
 {
     public enum Rotacao
     {

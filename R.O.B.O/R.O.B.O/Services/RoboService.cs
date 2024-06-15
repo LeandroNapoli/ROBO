@@ -1,6 +1,6 @@
-﻿using R.O.B.O.Domains;
+﻿using R.O.B.O.Core.Domains;
 using R.O.B.O.Services.IServices;
-using R.O.B.O.ViewModels;
+using R.O.B.O.Core.ViewModels;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -13,8 +13,8 @@ namespace R.O.B.O.Services
         {
             _roboApiService = new RoboApiService();
         }
-        public async Task AtualizarEstadosDosMembros(IEnumerable<Membro> membroViews) => await _roboApiService.AtualizarMembros(membroViews);
+        public async Task AtualizarEstadosDosMembros(MembrosRobo membroViews) => await _roboApiService.AtualizarMembros(membroViews);
 
-        public async Task<IEnumerable<MembroViewModel>> ObterEstadosDosMembros() => await _roboApiService.ObterMembros();
+        public async Task<IEnumerable<MembroViewModel>> ObterMembros() => await _roboApiService.ObterMembros();
     }
 }

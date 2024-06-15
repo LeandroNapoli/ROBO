@@ -1,6 +1,6 @@
-﻿using R.O.B.O.Api.Domains;
-using R.O.B.O.Api.Domains.Abstracts;
+﻿using R.O.B.O.Core.Domains;
 using R.O.B.O.Api.Repositories.IRepositories;
+using R.O.B.O.Core.Enums;
 
 namespace R.O.B.O.Api.Repositories
 {
@@ -12,35 +12,63 @@ namespace R.O.B.O.Api.Repositories
 
         public RoboRepository() 
         {
-            _bracoDireito = new Braco() { Nome = Enums.Membros.BracoDireito};
-            _bracoEsquerdo = new Braco() { Nome = Enums.Membros.BracoEsquerdo }; 
-            _cabeca = new Cabeca();
+            _bracoDireito = new Braco() { Nome = Membros.BracoDireito, Cotovelo = new Cotovelo() { Nome = Membros.CotoveloDireito }, Pulso = new Pulso() { Nome = Membros.PulsoDireito } };
+            _bracoEsquerdo = new Braco() { Nome = Membros.BracoEsquerdo, Cotovelo = new Cotovelo() { Nome = Membros.CotoveloEsquerdo }, Pulso = new Pulso() { Nome = Membros.PulsoEsquerdo } };
+            _cabeca = new Cabeca();        
         }
 
-        public void AtualizarMembros(IEnumerable<Membro> membro)
+        public void AtualizarMembros(MembrosRobo membros)
         {
-            var bracoDireito = membro.FirstOrDefault(x => x.Nome == Enums.Membros.BracoDireito);
-            var bracoEsquerdo = membro.FirstOrDefault(x => x.Nome == Enums.Membros.BracoEsquerdo);
-            var cabeca = membro.FirstOrDefault(x => x.Nome == Enums.Membros.Cabeca);
+            var bracoDireito = membros.Bracos.FirstOrDefault(x => x.Nome == Membros.BracoDireito);
+            var bracoEsquerdo = membros.Bracos.FirstOrDefault(x => x.Nome == Membros.BracoEsquerdo);
+            var cabeca = membros.Cabeca;
 
-            _bracoDireito.Rotacao = bracoDireito.Rotacao;
-            _bracoDireito.Estado = bracoDireito.Estado;
+            AtualizarBracoDireito(bracoDireito);
 
-            _bracoEsquerdo.Rotacao = bracoEsquerdo.Rotacao;
-            _bracoEsquerdo.Estado = bracoEsquerdo.Estado;
+            AtualizarBracoEsquerdo(bracoEsquerdo);
 
-            _cabeca.Rotacao = cabeca.Rotacao;
-            _cabeca.Estado = cabeca.Estado;
+            AtualizarCabeca(cabeca);
         }
 
-        public HashSet<Membro> ObterMembros()
+        public MembrosRobo ObterMembros()
         {
-            return new HashSet<Membro>
+            return new MembrosRobo
             {
-                _bracoDireito,
-                _bracoEsquerdo,
-                _cabeca
+                Bracos = new HashSet<Braco>() { _bracoDireito, _bracoEsquerdo },
+                Cabeca = _cabeca
             };
         }
+
+        private void AtualizarCabeca(Cabeca cabeca)
+        {
+            if (cabeca != null)
+            {
+                _cabeca.Rotacao = cabeca.Rotacao;
+                _cabeca.Estado = cabeca.Estado;
+            }
+        }
+
+        private void AtualizarBracoEsquerdo(Braco? bracoEsquerdo)
+        {
+            if (bracoEsquerdo != null)
+            {
+                _bracoEsquerdo.Cotovelo.Rotacao = bracoEsquerdo.Cotovelo.Rotacao;
+                _bracoEsquerdo.Cotovelo.Estado = bracoEsquerdo.Cotovelo.Estado;
+                _bracoEsquerdo.Pulso.Rotacao = bracoEsquerdo.Pulso.Rotacao;
+                _bracoEsquerdo.Pulso.Estado = bracoEsquerdo.Pulso.Estado;
+            }
+        }
+
+        private void AtualizarBracoDireito(Braco? bracoDireito)
+        {
+            if (bracoDireito != null)
+            {
+                _bracoDireito.Cotovelo.Rotacao = bracoDireito.Cotovelo.Rotacao;
+                _bracoDireito.Cotovelo.Estado = bracoDireito.Cotovelo.Estado;
+                _bracoDireito.Pulso.Rotacao = bracoDireito.Pulso.Rotacao;
+                _bracoDireito.Pulso.Estado = bracoDireito.Pulso.Estado;
+            }
+        }
+
     }
 }

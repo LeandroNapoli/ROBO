@@ -1,10 +1,10 @@
-﻿using R.O.B.O.Api.Domains.Abstracts;
+﻿using R.O.B.O.Core.Domains;
 
 namespace R.O.B.O.Api.Repositories.IRepositories
 {
     public interface IRoboRepository
     {
-        void AtualizarMembros(IEnumerable<Membro> membro);
-        HashSet<Membro> ObterMembros();
+        void AtualizarMembros(MembrosRobo membro);
+        MembrosRobo ObterMembros();
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using R.O.B.O.Api.Domains.Abstracts;
+using R.O.B.O.Core.Domains;
 using R.O.B.O.Api.Services;
 using R.O.B.O.Api.Services.IServices;
 using System.Text.Json;
@@ -34,7 +34,7 @@ namespace R.O.B.O.Api.Controllers
 
         [HttpPut]
         [Route("atualizar-membros")]
-        public HttpResponseMessage AtualizarMembros(IEnumerable<Membro> membro)
+        public HttpResponseMessage AtualizarMembros(MembrosRobo membro)
         {
             try
             {

@@ -1,13 +1,13 @@
-﻿using R.O.B.O.ViewModels;
+﻿using R.O.B.O.Core.ViewModels;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using R.O.B.O.Domains;
+using R.O.B.O.Core.Domains;
 
 namespace R.O.B.O.Services.IServices
 {
     public interface IRoboService
     {
-        Task<IEnumerable<MembroViewModel>> ObterEstadosDosMembros();
-        Task AtualizarEstadosDosMembros(IEnumerable<Membro> membroViews);
+        Task<IEnumerable<MembroViewModel>> ObterMembros();
+        Task AtualizarEstadosDosMembros(MembrosRobo membroViews);
     }
 }

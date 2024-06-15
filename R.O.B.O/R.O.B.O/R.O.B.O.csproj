@@ -130,11 +130,6 @@
     <Compile Include="Default.Master.designer.cs">
       <DependentUpon>Default.Master</DependentUpon>
     </Compile>
-    <Compile Include="Domains\Membro.cs" />
-    <Compile Include="Enums\EstadoCotovelo.cs" />
-    <Compile Include="Enums\Inclinacao.cs" />
-    <Compile Include="Enums\Membros.cs" />
-    <Compile Include="Enums\Rotacao.cs" />
     <Compile Include="Pages\Robo.aspx.cs">
       <DependentUpon>Robo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -147,7 +142,6 @@
     <Compile Include="Services\IServices\IRoboService.cs" />
     <Compile Include="Services\RoboApiService.cs" />
     <Compile Include="Services\RoboService.cs" />
-    <Compile Include="ViewModels\MembroViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.Master" />
@@ -181,7 +175,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\R.O.B.O.Core\R.O.B.O.Core.csproj">
+      <Project>{4bf3a481-0457-4078-8627-43b92f86016e}</Project>
+      <Name>R.O.B.O.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

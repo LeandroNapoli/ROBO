@@ -1,4 +1,4 @@
-﻿namespace R.O.B.O.Api.ViewModels
+﻿namespace R.O.B.O.Core.ViewModels
 {
     public class MembroViewModel
     {

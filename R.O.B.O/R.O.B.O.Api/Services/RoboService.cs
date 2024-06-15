@@ -1,8 +1,8 @@
-﻿using R.O.B.O.Api.Domains.Abstracts;
+﻿using R.O.B.O.Core.Domains;
 using R.O.B.O.Api.Repositories;
 using R.O.B.O.Api.Repositories.IRepositories;
 using R.O.B.O.Api.Services.IServices;
-using R.O.B.O.Api.ViewModels;
+using R.O.B.O.Core.ViewModels;
 
 namespace R.O.B.O.Api.Services
 {
@@ -14,18 +14,20 @@ namespace R.O.B.O.Api.Services
         {
             _repository = new RoboRepository();
         }
-        public void AtualizarMembros(IEnumerable<Membro> membros) => _repository.AtualizarMembros(membros);
+        public void AtualizarMembros(MembrosRobo membros) => _repository.AtualizarMembros(membros);
 
 
         public IEnumerable<MembroViewModel> ObterMembros()
         {
             var membros = _repository.ObterMembros();
-            var membrosViewModel = new HashSet<MembroViewModel>();
+            var membrosViewModel = new HashSet<MembroViewModel>() { new MembroViewModel { Nome = membros.Cabeca.Nome.ToString(), Estado = membros.Cabeca.Estado.ToString(), Rotacao = membros.Cabeca.Rotacao.ToString() } };
 
-            foreach (var membro in membros)
+            foreach (var braco in membros.Bracos)
             {
-                membrosViewModel.Add(new MembroViewModel { Estado = membro.Estado.ToString(), Nome = membro.Nome.ToString(), Rotacao = membro.Rotacao.ToString() });
+                membrosViewModel.Add(new MembroViewModel { Estado = braco.Cotovelo.Estado.ToString(), Nome = braco.Cotovelo.Nome.ToString(), Rotacao = braco.Cotovelo.Rotacao.ToString() });
+                membrosViewModel.Add(new MembroViewModel { Estado = braco.Pulso.Estado.ToString(), Nome = braco.Pulso.Nome.ToString(), Rotacao = braco.Pulso.Rotacao.ToString() });
             }
+
 
             return membrosViewModel;
         }

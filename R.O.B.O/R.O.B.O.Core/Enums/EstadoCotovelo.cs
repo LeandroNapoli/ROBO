@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace R.O.B.O.Enums
+namespace R.O.B.O.Core.Enums
 {
     public enum EstadoCotovelo
     {

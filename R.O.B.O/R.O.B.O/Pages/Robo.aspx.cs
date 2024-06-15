@@ -1,4 +1,5 @@
-﻿using R.O.B.O.Services;
+﻿using R.O.B.O.Core.Enums;
+using R.O.B.O.Services;
 using R.O.B.O.Services.IServices;
 using System;
 using System.Collections.Generic;
@@ -26,8 +27,13 @@ namespace R.O.B.O.Pages
                 if (!IsPostBack)
                 {
                     _roboService = new RoboService();
-                    var membros = await _roboService.ObterEstadosDosMembros();
                 }
+                var membros = await _roboService.ObterMembros();
+                var bracoDireito = membros.FirstOrDefault(x => x.Nome == Membros.BracoDireito.ToString());
+                var bracoEsquerdo = membros.FirstOrDefault(x => x.Nome == Membros.BracoEsquerdo.ToString());
+                var cabeca = membros.FirstOrDefault(x => x.Nome == Membros.Cabeca.ToString());
+
+                //txtCotoveloDireito.Text = bracoDireito.
             }
             catch (Exception ex)
             {

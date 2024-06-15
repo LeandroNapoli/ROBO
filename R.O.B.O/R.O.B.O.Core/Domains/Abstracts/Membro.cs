@@ -1,8 +1,9 @@
-﻿using R.O.B.O.Api.Enums;
+﻿using R.O.B.O.Core.Enums;
+using System;
 
-namespace R.O.B.O.Api.Domains.Abstracts
+namespace R.O.B.O.Core.Domains.Abstracts
 {
-    public class Membro
+    public abstract class Membro
     {
         public int Rotacao { get; set; }
         public int Estado { get; set; }
@@ -12,7 +13,7 @@ namespace R.O.B.O.Api.Domains.Abstracts
             if (rotacao == Rotacao - 1 || rotacao == Rotacao + 1)
                 return true;
 
-            return false;
+            throw new ArgumentException($"Não é possível rotacionar o {Nome}, pois o estado selecionado não vem antes ou depois do estado atual");
         }
 
         public virtual void Rotacionar(int rotacao) => Rotacao = rotacao;

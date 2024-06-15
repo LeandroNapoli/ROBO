@@ -1,11 +1,11 @@
-﻿using R.O.B.O.ViewModels;
+﻿using R.O.B.O.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Text.Json;
-using R.O.B.O.Domains;
+using R.O.B.O.Core.Domains;
 using R.O.B.O.Services.IServices;
 
 namespace R.O.B.O.Services
@@ -41,7 +41,7 @@ namespace R.O.B.O.Services
             }
         }
 
-        public async Task AtualizarMembros(IEnumerable<Membro> membros)
+        public async Task AtualizarMembros(MembrosRobo membros)
         {
             try
             {
@@ -58,7 +58,7 @@ namespace R.O.B.O.Services
             }
         }
 
-        private StringContent ObterContent(IEnumerable<Membro> membros)
+        private StringContent ObterContent(MembrosRobo membros)
         {
             var content = JsonSerializer.Serialize(membros);
             return new StringContent(content);
