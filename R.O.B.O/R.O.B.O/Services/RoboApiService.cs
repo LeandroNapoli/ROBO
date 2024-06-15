@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Text.Json;
 using R.O.B.O.Core.Domains;
 using R.O.B.O.Services.IServices;
+using Newtonsoft.Json;
 
 namespace R.O.B.O.Services
 {
@@ -30,9 +30,9 @@ namespace R.O.B.O.Services
                 if (resultado.StatusCode != System.Net.HttpStatusCode.OK)
                     throw new Exception("Erro ao obter Membros do R.O.B.O");
 
-                var data = resultado.Content.ReadAsStringAsync().ToString();
+                var data = await resultado.Content.ReadAsStringAsync();
 
-                return JsonSerializer.Deserialize<IEnumerable<MembroViewModel>>(data);
+                return JsonConvert.DeserializeObject<IEnumerable<MembroViewModel>>(data);
 
             }
             catch (Exception ex)
@@ -60,7 +60,7 @@ namespace R.O.B.O.Services
 
         private StringContent ObterContent(MembrosRobo membros)
         {
-            var content = JsonSerializer.Serialize(membros);
+            var content = JsonConvert.SerializeObject(membros);
             return new StringContent(content);
         }
     }
