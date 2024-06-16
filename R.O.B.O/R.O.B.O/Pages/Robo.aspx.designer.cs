@@ -15,13 +15,13 @@ namespace R.O.B.O.Pages
     {
 
         /// <summary>
-        /// ScriptManager1 control.
+        /// Scrip1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.ScriptManager Scrip1;
 
         /// <summary>
         /// divErro control.
@@ -96,15 +96,6 @@ namespace R.O.B.O.Pages
         protected global::System.Web.UI.WebControls.TextBox txtRotacaoCabeca;
 
         /// <summary>
-        /// dpdPulsoDireito control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpdPulsoDireito;
-
-        /// <summary>
         /// dpdCotoveloDireito control.
         /// </summary>
         /// <remarks>
@@ -114,13 +105,13 @@ namespace R.O.B.O.Pages
         protected global::System.Web.UI.WebControls.DropDownList dpdCotoveloDireito;
 
         /// <summary>
-        /// dpdPulsoEsquerdo control.
+        /// dpdPulsoDireito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpdPulsoEsquerdo;
+        protected global::System.Web.UI.WebControls.DropDownList dpdPulsoDireito;
 
         /// <summary>
         /// dpdCotoveloEsquerdo control.
@@ -130,6 +121,15 @@ namespace R.O.B.O.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dpdCotoveloEsquerdo;
+
+        /// <summary>
+        /// dpdPulsoEsquerdo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpdPulsoEsquerdo;
 
         /// <summary>
         /// dpdInclinacaoCabeca control.

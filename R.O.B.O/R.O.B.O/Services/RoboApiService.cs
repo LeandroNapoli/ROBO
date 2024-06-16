@@ -8,6 +8,7 @@ using R.O.B.O.Core.Domains;
 using R.O.B.O.Services.IServices;
 using Newtonsoft.Json;
 using System.Web;
+using System.Text;
 
 namespace R.O.B.O.Services
 {
@@ -48,7 +49,7 @@ namespace R.O.B.O.Services
             {
                 var stringContent = ObterContent(membros);
 
-                var resultado = await _httpClient.PutAsync($"{_urlPadraoApi}/{_urlPadraoRobo}/atualizar-membros", stringContent);
+                var resultado = await _httpClient.PutAsync($"{_urlPadraoApi}{_urlPadraoRobo}/atualizar-membros", stringContent);
 
                 if (resultado.StatusCode != System.Net.HttpStatusCode.OK)
                     throw new Exception("Erro ao obter Membros do R.O.B.O");
@@ -68,7 +69,7 @@ namespace R.O.B.O.Services
         private StringContent ObterContent(MembrosRobo membros)
         {
             var content = JsonConvert.SerializeObject(membros);
-            return new StringContent(content);
+            return new StringContent(content, Encoding.UTF8, "application/json");
         }
     }
 }

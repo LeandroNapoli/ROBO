@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\Constantes.cs" />
     <Compile Include="Domains\Abstracts\Membro.cs" />
     <Compile Include="Domains\Braco.cs" />
     <Compile Include="Domains\Cabeca.cs" />

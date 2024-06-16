@@ -32,7 +32,7 @@ namespace R.O.B.O.Api.Controllers
 
         [HttpPut]
         [Route("atualizar-membros")]
-        public IEnumerable<MembroViewModel> AtualizarMembros(MembrosRobo membro)
+        public IEnumerable<MembroViewModel> AtualizarMembros([FromBody] MembrosRobo membro)
         {
             try
             {
