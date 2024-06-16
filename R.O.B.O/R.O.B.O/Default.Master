@@ -13,7 +13,7 @@
     <form id="form1" class="container capsula" runat="server">
         <div>
             <div class="bg-primary text-center">
-                <h3 class="text-white">R.O.B.O. (Robô Operacional Binariamente Orientado)</h3>
+                <h3 class="text-white">R.O.B.O (Robô Operacional Binariamente Orientado)</h3>
             </div>
         </div>
         <main>

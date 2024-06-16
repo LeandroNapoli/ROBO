@@ -1,8 +1,6 @@
 ﻿using R.O.B.O.Core.Domains;
 using R.O.B.O.Api.Repositories.IRepositories;
 using R.O.B.O.Core.Enums;
-using System.Web;
-using System.Text.Json;
 
 namespace R.O.B.O.Api.Repositories
 {
