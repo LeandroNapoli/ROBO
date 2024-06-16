@@ -1,6 +1,6 @@
-# ROBO
+# R.O.B.O - (Robô Operacional Binariamente Orientado)
 
-Projeto criado para controlar os estados dos membros do R.O.B.O.
+Projeto criado para controlar os estados do R.O.B.O.
 
 Regras implementadas:
 - O estado inicial dos movimentos é Em Repouso.
