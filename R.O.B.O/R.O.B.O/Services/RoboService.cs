@@ -9,6 +9,7 @@ namespace R.O.B.O.Services
     public class RoboService : IRoboService
     {
         private IRoboApiService _roboApiService;
+
         public RoboService()
         {
             _roboApiService = new RoboApiService();

@@ -29,11 +29,18 @@ namespace R.O.B.O.Pages
                     _roboService = new RoboService();
                 }
                 var membros = await _roboService.ObterMembros();
-                var bracoDireito = membros.FirstOrDefault(x => x.Nome == Membros.BracoDireito.ToString());
-                var bracoEsquerdo = membros.FirstOrDefault(x => x.Nome == Membros.BracoEsquerdo.ToString());
-                var cabeca = membros.FirstOrDefault(x => x.Nome == Membros.Cabeca.ToString());
+                var cotoveloDireito = membros.First(x => x.Nome == Membros.CotoveloDireito.ToString());
+                var cotoveloEsquerdo = membros.First(x => x.Nome == Membros.CotoveloEsquerdo.ToString());
+                var pulsoDireito = membros.First(x => x.Nome == Membros.PulsoDireito.ToString());
+                var pulsoEsquerdo = membros.First(x => x.Nome == Membros.PulsoEsquerdo.ToString());
+                var cabeca = membros.First(x => x.Nome == Membros.Cabeca.ToString());
 
-                //txtCotoveloDireito.Text = bracoDireito.
+                txtEstadoCotoveloDireito.Text = cotoveloDireito.Estado;
+                txtEstadoCotoveloEsquerdo.Text = cotoveloEsquerdo.Estado;
+                txtRotacaoPulsoDireito.Text = pulsoDireito.Rotacao;
+                txtRotacaoPulsoEsquerdo.Text = pulsoEsquerdo.Rotacao;
+                txtRotacaoCabeca.Text = cabeca.Rotacao;
+                txtInclinacaoCabeca.Text = cabeca.Estado;
             }
             catch (Exception ex)
             {

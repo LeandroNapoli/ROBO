@@ -24,40 +24,40 @@ namespace R.O.B.O.Pages
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
-        /// txtCotoveloDireito control.
+        /// txtEstadoCotoveloDireito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCotoveloDireito;
+        protected global::System.Web.UI.WebControls.TextBox txtEstadoCotoveloDireito;
 
         /// <summary>
-        /// txtPulsoDireito control.
+        /// txtRotacaoPulsoDireito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPulsoDireito;
+        protected global::System.Web.UI.WebControls.TextBox txtRotacaoPulsoDireito;
 
         /// <summary>
-        /// txtCotoveloEsquerdo control.
+        /// txtEstadoCotoveloEsquerdo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCotoveloEsquerdo;
+        protected global::System.Web.UI.WebControls.TextBox txtEstadoCotoveloEsquerdo;
 
         /// <summary>
-        /// txtPulsoEsquerdo control.
+        /// txtRotacaoPulsoEsquerdo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPulsoEsquerdo;
+        protected global::System.Web.UI.WebControls.TextBox txtRotacaoPulsoEsquerdo;
 
         /// <summary>
         /// txtInclinacaoCabeca control.

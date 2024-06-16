@@ -52,10 +52,8 @@ namespace R.O.B.O.Api.Repositories
         {
             if (bracoEsquerdo != null)
             {
-                _bracoEsquerdo.Cotovelo.Rotacao = bracoEsquerdo.Cotovelo.Rotacao;
                 _bracoEsquerdo.Cotovelo.Estado = bracoEsquerdo.Cotovelo.Estado;
                 _bracoEsquerdo.Pulso.Rotacao = bracoEsquerdo.Pulso.Rotacao;
-                _bracoEsquerdo.Pulso.Estado = bracoEsquerdo.Pulso.Estado;
             }
         }
 
@@ -63,10 +61,8 @@ namespace R.O.B.O.Api.Repositories
         {
             if (bracoDireito != null)
             {
-                _bracoDireito.Cotovelo.Rotacao = bracoDireito.Cotovelo.Rotacao;
                 _bracoDireito.Cotovelo.Estado = bracoDireito.Cotovelo.Estado;
                 _bracoDireito.Pulso.Rotacao = bracoDireito.Pulso.Rotacao;
-                _bracoDireito.Pulso.Estado = bracoDireito.Pulso.Estado;
             }
         }
 

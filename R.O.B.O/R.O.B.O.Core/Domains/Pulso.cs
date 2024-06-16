@@ -6,7 +6,7 @@ namespace R.O.B.O.Core.Domains
 {
     public class Pulso : Membro
     {
-        public Pulso() { Estado = (int)EstadoCotovelo.EmRepouso; Rotacao = (int)Enums.Rotacao.EmRepouso; }
+        public Pulso() { Rotacao = (int)Enums.Rotacao.EmRepouso; }
         public void VerificarRotacaoPulso(int estadoCotovelo)
         {
             if (estadoCotovelo != (int)EstadoCotovelo.FortementeContraido)

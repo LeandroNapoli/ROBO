@@ -1,12 +1,13 @@
 ﻿using R.O.B.O.Core.Domains;
 using R.O.B.O.Api.Services;
 using R.O.B.O.Api.Services.IServices;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
+using R.O.B.O.Core.ViewModels;
 
 namespace R.O.B.O.Api.Controllers
 {
     [Route("robo")]
-    public class RoboController : ApiController
+    public class RoboController : ControllerBase
     {
         private IRoboService _roboService;
 
@@ -17,31 +18,30 @@ namespace R.O.B.O.Api.Controllers
 
         [HttpGet]
         [Route("obter-membros")]
-        public IHttpActionResult ObterMembros()
+        public IEnumerable<MembroViewModel> ObterMembros()
         {
             try
             {
-                var membros = _roboService.ObterMembros();
-                return Ok(membros);
+                return _roboService.ObterMembros();
             }
-            catch (Exception ex)
+            catch
             {
-                return InternalServerError(ex);
+                return Enumerable.Empty<MembroViewModel>();
             }
         }
 
         [HttpPut]
         [Route("atualizar-membros")]
-        public IHttpActionResult AtualizarMembros(MembrosRobo membro)
+        public bool AtualizarMembros(MembrosRobo membro)
         {
             try
             {
                 _roboService.AtualizarMembros(membro);
-                return Ok();
+                return true;
             }
-            catch (Exception ex)
+            catch
             {
-                return InternalServerError(ex);
+                return false;
             }
         }
     }

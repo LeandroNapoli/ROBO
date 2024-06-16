@@ -11,27 +11,27 @@
                 <div>
                     <label>Braço Direito</label>
                     <div runat="server" class="col-md-12">
-                        <div class="col-md-4 form-check-inline">
+                        <div class="col-md-3 form-check-inline">
                             <asp:Label runat="server" CssClass="form-label">Estado Cotovelo Direito</asp:Label>
-                            <asp:TextBox runat="server" CssClass="form-control" ID="txtCotoveloDireito" Enabled="false">rotação</asp:TextBox>
+                            <asp:TextBox runat="server" CssClass="form-control" ID="txtEstadoCotoveloDireito" Enabled="false"></asp:TextBox>
                         </div>
-                        <div class="col-md-4 form-check-inline">
-                            <asp:Label runat="server" CssClass="form-label">Estado Pulso Direito</asp:Label>
-                            <asp:TextBox runat="server" CssClass="form-control" ID="txtPulsoDireito" Enabled="false">rotação</asp:TextBox>
+                        <div class="col-md-3 form-check-inline">
+                            <asp:Label runat="server" CssClass="form-label">Rotação Pulso Direito</asp:Label>
+                            <asp:TextBox runat="server" CssClass="form-control" ID="txtRotacaoPulsoDireito" Enabled="false"></asp:TextBox>
                         </div>
                     </div>
                 </div>
                 <div class="divider"></div>
                 <div>
                     <label>Braço Esquerdo</label>
-                    <div class="col-md-12">
-                        <div class="col-md-4 form-check-inline">
+                    <div runat="server" class="col-md-12">
+                        <div class="col-md-3 form-check-inline">
                             <asp:Label runat="server" CssClass="form-label">Estado Cotovelo Esquerdo</asp:Label>
-                            <asp:TextBox runat="server" CssClass="form-control" ID="txtCotoveloEsquerdo" Enabled="false">rotação</asp:TextBox>
+                            <asp:TextBox runat="server" CssClass="form-control" ID="txtEstadoCotoveloEsquerdo" Enabled="false"></asp:TextBox>
                         </div>
-                        <div class="col-md-4 form-check-inline">
-                            <asp:Label runat="server" CssClass="form-label">Estado Pulso Esquerdo</asp:Label>
-                            <asp:TextBox runat="server" CssClass="form-control" ID="txtPulsoEsquerdo" Enabled="false">rotação</asp:TextBox>
+                        <div class="col-md-3 form-check-inline">
+                            <asp:Label runat="server" CssClass="form-label">Rotação Pulso Esquerdo</asp:Label>
+                            <asp:TextBox runat="server" CssClass="form-control" ID="txtRotacaoPulsoEsquerdo" Enabled="false"></asp:TextBox>
                         </div>
                     </div>
                 </div>
@@ -40,12 +40,12 @@
                     <label>Estado Cabeça</label>
                     <div class="col-md-12">
                         <div class="col-md-4 form-check-inline">
-                            <asp:Label runat="server" CssClass="form-label">Estado Braço Direito</asp:Label>
-                            <asp:TextBox runat="server" CssClass="form-control" ID="txtInclinacaoCabeca" Enabled="false">inclinado</asp:TextBox>
+                            <asp:Label runat="server" CssClass="form-label">Inclinação Cabeça</asp:Label>
+                            <asp:TextBox runat="server" CssClass="form-control" ID="txtInclinacaoCabeca" Enabled="false"></asp:TextBox>
                         </div>
                         <div class="col-md-4 form-check-inline">
-                            <asp:Label runat="server" CssClass="form-label text-start">Estado Braço Direito</asp:Label>
-                            <asp:TextBox runat="server" CssClass="form-control" ID="txtRotacaoCabeca" Enabled="false">inclinado</asp:TextBox>
+                            <asp:Label runat="server" CssClass="form-label text-start">Rotação Cabeça</asp:Label>
+                            <asp:TextBox runat="server" CssClass="form-control" ID="txtRotacaoCabeca" Enabled="false"></asp:TextBox>
                         </div>
                     </div>
                 </div>

@@ -8,8 +8,8 @@ namespace R.O.B.O.Core.Domains
 
         public Braco()
         {
-            Cotovelo = new Cotovelo() { Estado = (int)EstadoCotovelo.EmRepouso, Rotacao = (int)Rotacao.EmRepouso };
-            Pulso = new Pulso() { Rotacao = (int)Rotacao.EmRepouso };
+            Cotovelo = new Cotovelo();
+            Pulso = new Pulso();
         }
 
         public Cotovelo Cotovelo { get; set; }
