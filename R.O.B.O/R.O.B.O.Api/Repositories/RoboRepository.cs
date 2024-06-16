@@ -1,6 +1,8 @@
 ﻿using R.O.B.O.Core.Domains;
 using R.O.B.O.Api.Repositories.IRepositories;
 using R.O.B.O.Core.Enums;
+using System.Web;
+using System.Text.Json;
 
 namespace R.O.B.O.Api.Repositories
 {
@@ -17,7 +19,7 @@ namespace R.O.B.O.Api.Repositories
             _cabeca = new Cabeca();        
         }
 
-        public void AtualizarMembros(MembrosRobo membros)
+        public MembrosRobo AtualizarMembros(MembrosRobo membros)
         {
             var bracoDireito = membros.Bracos.FirstOrDefault(x => x.Nome == Membros.BracoDireito);
             var bracoEsquerdo = membros.Bracos.FirstOrDefault(x => x.Nome == Membros.BracoEsquerdo);
@@ -28,6 +30,8 @@ namespace R.O.B.O.Api.Repositories
             AtualizarBracoEsquerdo(bracoEsquerdo);
 
             AtualizarCabeca(cabeca);
+
+            return new MembrosRobo() { Bracos = new HashSet<Braco> { _bracoDireito, _bracoEsquerdo}, Cabeca = _cabeca };
         }
 
         public MembrosRobo ObterMembros()

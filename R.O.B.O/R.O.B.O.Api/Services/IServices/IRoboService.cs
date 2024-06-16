@@ -5,7 +5,7 @@ namespace R.O.B.O.Api.Services.IServices
 {
     public interface IRoboService
     {
-        IEnumerable<MembroViewModel> ObterMembros();
-        void AtualizarMembros(MembrosRobo membro);
+        IEnumerable<MembroViewModel> ObterMembrosIniciais();
+        IEnumerable<MembroViewModel> AtualizarMembros(MembrosRobo membro);
     }
 }

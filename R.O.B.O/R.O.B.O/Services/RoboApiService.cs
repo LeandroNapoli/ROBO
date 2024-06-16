@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using R.O.B.O.Core.Domains;
 using R.O.B.O.Services.IServices;
 using Newtonsoft.Json;
+using System.Web;
 
 namespace R.O.B.O.Services
 {
@@ -51,6 +52,12 @@ namespace R.O.B.O.Services
 
                 if (resultado.StatusCode != System.Net.HttpStatusCode.OK)
                     throw new Exception("Erro ao obter Membros do R.O.B.O");
+
+                var data = await resultado.Content.ReadAsStringAsync();
+
+                var membrosAtualizados = JsonConvert.DeserializeObject<IEnumerable<MembroViewModel>>(data);
+                HttpContext.Current.Session["MembrosRobo"] = JsonConvert.SerializeObject(membrosAtualizados);
+
             }
             catch (Exception ex)
             {

@@ -3,28 +3,20 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
-using System.Web;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 namespace R.O.B.O.Core.Helper
 {
-    public class EnumHelper<T> where T : struct
+    public static class DropDownHelper
     {
-        SelectListItem defaultListItem;
-
-        public EnumHelper()
-        {
-            defaultListItem = new SelectListItem { Text = "SELECIONE", Value = "" };
-        }
 
         /// <summary>
         /// Cria uma Select List Item a partir de um ENUM, sendo seu Value = Código do ENUM e Text = DisplayName do ENUM
         /// </summary>
         /// <param name="defaultValue">Parâmetro para a inserção de opção default 'SELECIONE', na primeira posição da lista</param>
         /// <returns></returns>
-        public List<SelectListItem> PopularDropDownPorEnum(bool defaultValue = true)
+        public static void PopularDropDownPorEnum<T>(this DropDownList dropDownList,bool defaultValue = true) where T : struct
         {
             var tipoEnum = typeof(T);
 
@@ -41,14 +33,27 @@ namespace R.O.B.O.Core.Helper
                 var selectListItem = new SelectListItem
                 {
                     Value = Convert.ToString(valor),
-                    Text = nome.ToUpper()
+                    Text = nome
                 };
 
-                valoresDropDown.Insert(0, selectListItem);
+                valoresDropDown.Add(selectListItem);
             }
 
-            if (defaultValue) valoresDropDown.Insert(0, defaultListItem);
-            return valoresDropDown;
+            if (defaultValue) 
+            {
+                var defaultListItem = new SelectListItem { Text = "Selecione", Value = "" };
+                valoresDropDown.Insert(0, defaultListItem); 
+            }
+
+            PreencherDropDown(dropDownList, valoresDropDown);
+        }
+
+        public static void PreencherDropDown(DropDownList dropDownList, List<SelectListItem> valoresDropDown)
+        {
+            dropDownList.DataValueField = "Value";
+            dropDownList.DataTextField = "Text";
+            dropDownList.DataSource = valoresDropDown;
+            dropDownList.DataBind();
         }
     }
 }

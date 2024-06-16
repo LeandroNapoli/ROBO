@@ -18,11 +18,11 @@ namespace R.O.B.O.Api.Controllers
 
         [HttpGet]
         [Route("obter-membros")]
-        public IEnumerable<MembroViewModel> ObterMembros()
+        public IEnumerable<MembroViewModel> ObterMembrosIniciais()
         {
             try
             {
-                return _roboService.ObterMembros();
+                return _roboService.ObterMembrosIniciais();
             }
             catch
             {
@@ -32,16 +32,16 @@ namespace R.O.B.O.Api.Controllers
 
         [HttpPut]
         [Route("atualizar-membros")]
-        public bool AtualizarMembros(MembrosRobo membro)
+        public IEnumerable<MembroViewModel> AtualizarMembros(MembrosRobo membro)
         {
             try
             {
-                _roboService.AtualizarMembros(membro);
-                return true;
+                var membrosAtualizados = _roboService.AtualizarMembros(membro);
+                return membrosAtualizados;
             }
             catch
             {
-                return false;
+                return Enumerable.Empty<MembroViewModel>();
             }
         }
     }

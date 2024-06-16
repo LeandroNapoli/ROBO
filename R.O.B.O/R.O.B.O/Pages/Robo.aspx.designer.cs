@@ -24,6 +24,24 @@ namespace R.O.B.O.Pages
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
+        /// divErro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divErro;
+
+        /// <summary>
+        /// divSucesso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divSucesso;
+
+        /// <summary>
         /// txtEstadoCotoveloDireito control.
         /// </summary>
         /// <remarks>
@@ -130,5 +148,14 @@ namespace R.O.B.O.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dpdRotacaoCabeca;
+
+        /// <summary>
+        /// btnSalvarAlteracoes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSalvarAlteracoes;
     }
 }

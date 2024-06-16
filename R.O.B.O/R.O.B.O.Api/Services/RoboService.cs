@@ -44,12 +44,21 @@ namespace R.O.B.O.Api.Services
         {
             _repository = new RoboRepository();
         }
-        public void AtualizarMembros(MembrosRobo membros) => _repository.AtualizarMembros(membros);
 
+        public IEnumerable<MembroViewModel> AtualizarMembros(MembrosRobo membros) 
+        { 
+            _repository.AtualizarMembros(membros); 
+            return ObterMembrosViewModel(membros);
+        }
 
-        public IEnumerable<MembroViewModel> ObterMembros()
+        public IEnumerable<MembroViewModel> ObterMembrosIniciais()
         {
             var membros = _repository.ObterMembros();
+            return ObterMembrosViewModel(membros);
+        }
+
+        private IEnumerable<MembroViewModel> ObterMembrosViewModel(MembrosRobo membros)
+        {
             var membrosViewModel = new HashSet<MembroViewModel>() { new MembroViewModel { Nome = membros.Cabeca.Nome.ToString(), Estado = _dicionarioInclinacao[membros.Cabeca.Estado], Rotacao = _dicionarioRotacao[membros.Cabeca.Rotacao] } };
 
             foreach (var braco in membros.Bracos)
@@ -57,7 +66,6 @@ namespace R.O.B.O.Api.Services
                 membrosViewModel.Add(new MembroViewModel { Estado = _dicionarioEstadoCotovelo[braco.Cotovelo.Estado], Nome = braco.Cotovelo.Nome.ToString() });
                 membrosViewModel.Add(new MembroViewModel { Nome = braco.Pulso.Nome.ToString(), Rotacao = _dicionarioRotacao[braco.Pulso.Rotacao] });
             }
-
 
             return membrosViewModel;
         }
