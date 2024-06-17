@@ -6,6 +6,7 @@ Projetos dentro da Solution:
 - R.O.B.O - .Net Framework 4.7.2 - Aplicação do Front End - Web Forms
 - R.O.B.O.Api - .Net Framework 8.0 - Aplicação Back End - Web Api
 - R.O.B.O.Core - .Net Framework 4.7.2 - Class Library - Centralizador dos objetos utilizados
+- R.O.B.O.Test - .Net Framework 8.0 - Aplicação com testes unitários utilizando o xUnit
 
 Regras implementadas:
 - O estado inicial dos movimentos é Em Repouso.
@@ -19,4 +20,4 @@ Packages utilizados para a execução do projeto:
 - Newtonsoft.Json;
 - Microsoft.AspNetCore.Mvc;
 - Bootstrap;
- 
+- xUnit; 
