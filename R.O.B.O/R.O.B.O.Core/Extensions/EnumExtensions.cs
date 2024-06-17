@@ -6,11 +6,11 @@ namespace R.O.B.O.Core.Extensions
 {
     public static class EnumExtensions
     {
-        public static string GetDisplayName(this Enum value)
+        public static string ObterDisplayName(this Enum valor)
         {
-            FieldInfo field = value.GetType().GetField(value.ToString());
-            DisplayAttribute attribute = field.GetCustomAttribute<DisplayAttribute>();
-            return attribute == null ? value.ToString() : attribute.Name;
+            var campo = valor.GetType().GetField(valor.ToString());
+            var atributo = campo.GetCustomAttribute<DisplayAttribute>();
+            return atributo == null ? valor.ToString() : atributo.Name;
         }
     }
 }

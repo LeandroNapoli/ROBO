@@ -7,5 +7,6 @@ namespace R.O.B.O.Api.Services.IServices
     {
         IEnumerable<MembroViewModel> ObterMembrosIniciais();
         IEnumerable<MembroViewModel> AtualizarMembros(MembrosRobo membro);
+        IEnumerable<MembroViewModel> ObterMembrosViewModel(MembrosRobo membros);
     }
 }

@@ -12,7 +12,7 @@ namespace R.O.B.O.Core.Domains
         {
             if (estadoCotovelo != (int)EstadoCotovelo.FortementeContraido)
             {
-                throw new ArgumentException($"O pulso não pode ser rotacionado, pois o estado atual do {cotovelo.GetDisplayName()} não é Fortemente Contraído");
+                throw new ArgumentException($"O pulso não pode ser rotacionado, pois o estado atual do {cotovelo.ObterDisplayName()} não é Fortemente Contraído");
             }
         }
     }

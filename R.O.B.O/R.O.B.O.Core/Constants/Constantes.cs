@@ -7,53 +7,53 @@ namespace R.O.B.O.Core.Constants
     public static class Constantes
     {
         public static Dictionary<int, string> DicionarioRotacao = new Dictionary<int, string>() {
-            { (int)Rotacao.Rotacao90Negativo, Rotacao.Rotacao90Negativo.GetDisplayName() },
-            { (int)Rotacao.Rotacao45Negativo, Rotacao.Rotacao45Negativo.GetDisplayName() },
-            { (int)Rotacao.EmRepouso, Rotacao.EmRepouso.GetDisplayName() },
-            { (int)Rotacao.Rotacao45, Rotacao.Rotacao45.GetDisplayName() },
-            { (int)Rotacao.Rotacao90, Rotacao.Rotacao90.GetDisplayName() },
-            { (int)Rotacao.Rotacao135, Rotacao.Rotacao135.GetDisplayName() },
-            { (int)Rotacao.Rotacao180, Rotacao.Rotacao180.GetDisplayName() },
+            { (int)Rotacao.Rotacao90Negativo, Rotacao.Rotacao90Negativo.ObterDisplayName() },
+            { (int)Rotacao.Rotacao45Negativo, Rotacao.Rotacao45Negativo.ObterDisplayName() },
+            { (int)Rotacao.EmRepouso, Rotacao.EmRepouso.ObterDisplayName() },
+            { (int)Rotacao.Rotacao45, Rotacao.Rotacao45.ObterDisplayName() },
+            { (int)Rotacao.Rotacao90, Rotacao.Rotacao90.ObterDisplayName() },
+            { (int)Rotacao.Rotacao135, Rotacao.Rotacao135.ObterDisplayName() },
+            { (int)Rotacao.Rotacao180, Rotacao.Rotacao180.ObterDisplayName() },
         };
 
         public static Dictionary<int, string> DicionarioInclinacao = new Dictionary<int, string>()
         {
-            { (int)Inclinacao.ParaBaixo, Inclinacao.ParaBaixo.GetDisplayName() },
-            { (int)Inclinacao.EmRepouso, Inclinacao.EmRepouso.GetDisplayName() },
-            { (int)Inclinacao.ParaCima, Inclinacao.ParaCima.GetDisplayName() }
+            { (int)Inclinacao.ParaBaixo, Inclinacao.ParaBaixo.ObterDisplayName() },
+            { (int)Inclinacao.EmRepouso, Inclinacao.EmRepouso.ObterDisplayName() },
+            { (int)Inclinacao.ParaCima, Inclinacao.ParaCima.ObterDisplayName() }
         };
 
         public static Dictionary<int, string> DicionarioEstadoCotovelo = new Dictionary<int, string>()
         {
-            { (int)EstadoCotovelo.EmRepouso, EstadoCotovelo.EmRepouso.GetDisplayName() },
-            { (int)EstadoCotovelo.LevementeContraido, EstadoCotovelo.LevementeContraido.GetDisplayName() },
-            { (int)EstadoCotovelo.Contraido, EstadoCotovelo.Contraido.GetDisplayName() },
-            { (int)EstadoCotovelo.FortementeContraido, EstadoCotovelo.FortementeContraido.GetDisplayName() }
+            { (int)EstadoCotovelo.EmRepouso, EstadoCotovelo.EmRepouso.ObterDisplayName() },
+            { (int)EstadoCotovelo.LevementeContraido, EstadoCotovelo.LevementeContraido.ObterDisplayName() },
+            { (int)EstadoCotovelo.Contraido, EstadoCotovelo.Contraido.ObterDisplayName() },
+            { (int)EstadoCotovelo.FortementeContraido, EstadoCotovelo.FortementeContraido.ObterDisplayName() }
         };        
         
         public static Dictionary<string, Rotacao> DicionarioRotacaoCamposTela = new Dictionary<string, Rotacao>() {
-            { Rotacao.Rotacao90Negativo.GetDisplayName(), Rotacao.Rotacao90Negativo },
-            { Rotacao.Rotacao45Negativo.GetDisplayName(), Rotacao.Rotacao45Negativo },
-            { Rotacao.EmRepouso.GetDisplayName() , Rotacao.EmRepouso },
-            { Rotacao.Rotacao45.GetDisplayName() , Rotacao.Rotacao45 },
-            { Rotacao.Rotacao90.GetDisplayName() , Rotacao.Rotacao90 },
-            { Rotacao.Rotacao135.GetDisplayName() , Rotacao.Rotacao135 },
-            { Rotacao.Rotacao180.GetDisplayName() , Rotacao.Rotacao180 },
+            { Rotacao.Rotacao90Negativo.ObterDisplayName(), Rotacao.Rotacao90Negativo },
+            { Rotacao.Rotacao45Negativo.ObterDisplayName(), Rotacao.Rotacao45Negativo },
+            { Rotacao.EmRepouso.ObterDisplayName() , Rotacao.EmRepouso },
+            { Rotacao.Rotacao45.ObterDisplayName() , Rotacao.Rotacao45 },
+            { Rotacao.Rotacao90.ObterDisplayName() , Rotacao.Rotacao90 },
+            { Rotacao.Rotacao135.ObterDisplayName() , Rotacao.Rotacao135 },
+            { Rotacao.Rotacao180.ObterDisplayName() , Rotacao.Rotacao180 },
         };
 
         public static Dictionary<string, Inclinacao> DicionarioInclinacaoCamposTela = new Dictionary<string, Inclinacao>()
         {
-            { Inclinacao.ParaBaixo.GetDisplayName() , Inclinacao.ParaBaixo },
-            { Inclinacao.EmRepouso.GetDisplayName() , Inclinacao.EmRepouso },
-            { Inclinacao.ParaCima.GetDisplayName() , Inclinacao.ParaCima }
+            { Inclinacao.ParaBaixo.ObterDisplayName() , Inclinacao.ParaBaixo },
+            { Inclinacao.EmRepouso.ObterDisplayName() , Inclinacao.EmRepouso },
+            { Inclinacao.ParaCima.ObterDisplayName() , Inclinacao.ParaCima }
         };
 
         public static Dictionary<string, EstadoCotovelo> DicionarioEstadoCotoveloCamposTela = new Dictionary<string, EstadoCotovelo>()
         {
-            { EstadoCotovelo.EmRepouso.GetDisplayName() , EstadoCotovelo.EmRepouso },
-            { EstadoCotovelo.LevementeContraido.GetDisplayName() , EstadoCotovelo.LevementeContraido },
-            { EstadoCotovelo.Contraido.GetDisplayName() , EstadoCotovelo.Contraido },
-            { EstadoCotovelo.FortementeContraido.GetDisplayName() , EstadoCotovelo.FortementeContraido }
+            { EstadoCotovelo.EmRepouso.ObterDisplayName() , EstadoCotovelo.EmRepouso },
+            { EstadoCotovelo.LevementeContraido.ObterDisplayName() , EstadoCotovelo.LevementeContraido },
+            { EstadoCotovelo.Contraido.ObterDisplayName() , EstadoCotovelo.Contraido },
+            { EstadoCotovelo.FortementeContraido.ObterDisplayName() , EstadoCotovelo.FortementeContraido }
         };
 
         public static Dictionary<Membros, Membros> DicionarioCotoveloCriacaoBraco = new Dictionary<Membros, Membros>()

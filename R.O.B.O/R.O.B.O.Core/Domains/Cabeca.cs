@@ -13,11 +13,11 @@ namespace R.O.B.O.Core.Domains
             Rotacao = (int)Enums.Rotacao.EmRepouso;
         }
 
-        public void VerificarRotacaoCabeca(int rotacao)
+        public bool VerificarRotacaoCabeca(int rotacao)
         {
             if (Estado != (int)Inclinacao.ParaBaixo)
             {
-                VerificarRotacao(rotacao);
+                return VerificarRotacao(rotacao);
             }
             else
                 throw new ArgumentException($"A cabeça não pode ser rotacionada, pois sua inclinação está para baixo!");

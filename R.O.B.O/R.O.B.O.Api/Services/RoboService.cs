@@ -28,7 +28,7 @@ namespace R.O.B.O.Api.Services
             return ObterMembrosViewModel(membros);
         }
 
-        private IEnumerable<MembroViewModel> ObterMembrosViewModel(MembrosRobo membros)
+        public IEnumerable<MembroViewModel> ObterMembrosViewModel(MembrosRobo membros)
         {
             var membrosViewModel = new HashSet<MembroViewModel>() { new MembroViewModel { Nome = membros.Cabeca.Nome.ToString(), Estado = Constantes.DicionarioInclinacao[membros.Cabeca.Estado], Rotacao = Constantes.DicionarioRotacao[membros.Cabeca.Rotacao] } };
 
