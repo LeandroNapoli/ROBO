@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Newtonsoft.Json;
 using System.Linq;
+using R.O.B.O.Core.Constants;
 
 namespace R.O.B.O.Services
 {
@@ -21,7 +22,7 @@ namespace R.O.B.O.Services
 
         public async Task<IEnumerable<MembroViewModel>> ObterMembros() 
         {
-            var membrosAtualizados = JsonConvert.DeserializeObject<IEnumerable<MembroViewModel>>(HttpContext.Current.Session["MembrosRobo"].ToString());
+            var membrosAtualizados = JsonConvert.DeserializeObject<IEnumerable<MembroViewModel>>(HttpContext.Current.Session[Constantes.MembrosRobo].ToString());
             
             if (!membrosAtualizados.Any())
             {

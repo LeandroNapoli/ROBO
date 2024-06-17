@@ -6,6 +6,8 @@ namespace R.O.B.O.Core.Constants
 {
     public static class Constantes
     {
+        public const string MembrosRobo = "MembrosRobo";
+
         public static Dictionary<int, string> DicionarioRotacao = new Dictionary<int, string>() {
             { (int)Rotacao.Rotacao90Negativo, Rotacao.Rotacao90Negativo.ObterDisplayName() },
             { (int)Rotacao.Rotacao45Negativo, Rotacao.Rotacao45Negativo.ObterDisplayName() },

@@ -35,16 +35,40 @@ namespace R.O.B.O.Pages
 
                 if (!IsPostBack)
                 {
-                    HttpContext.Current.Session["MembrosRobo"] = JsonConvert.SerializeObject(Enumerable.Empty<MembroViewModel>());
+                    HttpContext.Current.Session[Constantes.MembrosRobo] = JsonConvert.SerializeObject(Enumerable.Empty<MembroViewModel>());
                     PopularDropDowns();
                 }
-                
+
                 await PreencherValoresMembros();
 
             }
             catch (Exception ex)
             {
                 MostrarAlertaErro(ex.Message);
+            }
+        }
+
+        protected async void btnSalvarAlteracoes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var bracoDireito = ObterBraco(dpdCotoveloDireito, dpdPulsoDireito, txtEstadoCotoveloDireito, txtRotacaoPulsoDireito, Membros.BracoDireito);
+                var bracoEsquerdo = ObterBraco(dpdCotoveloEsquerdo, dpdPulsoEsquerdo, txtEstadoCotoveloEsquerdo, txtRotacaoPulsoEsquerdo, Membros.BracoEsquerdo);
+                var cabeca = ObterCabeca();
+
+                var membrosRobo = new MembrosRobo() { Cabeca = cabeca, Bracos = new HashSet<Braco>() { bracoDireito, bracoEsquerdo } };
+                await _roboService.AtualizarEstadosDosMembros(membrosRobo);
+
+                MostrarAlertaSucesso("Membros Robo Atualizados");
+            }
+            catch (Exception ex)
+            {
+                MostrarAlertaErro(ex.Message);
+            }
+            finally
+            {
+                PopularDropDowns();
+                await PreencherValoresMembros();
             }
         }
 
@@ -75,30 +99,6 @@ namespace R.O.B.O.Pages
             DropDownHelper.PopularDropDownPorEnum<Rotacao>(dpdPulsoEsquerdo);
         }
 
-        protected async void btnSalvarAlteracoes_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var bracoDireito = ObterBraco(dpdCotoveloDireito, dpdPulsoDireito, txtEstadoCotoveloDireito, txtRotacaoPulsoDireito, Membros.BracoDireito);
-                var bracoEsquerdo = ObterBraco(dpdCotoveloEsquerdo, dpdPulsoEsquerdo, txtEstadoCotoveloEsquerdo, txtRotacaoPulsoEsquerdo, Membros.BracoEsquerdo);
-                var cabeca = ObterCabeca();
-
-                var membrosRobo = new MembrosRobo() { Cabeca = cabeca, Bracos = new HashSet<Braco>() { bracoDireito, bracoEsquerdo } };
-                await _roboService.AtualizarEstadosDosMembros(membrosRobo);
-
-                MostrarAlertaSucesso("Membros Robo Atualizados");
-            }
-            catch (Exception ex)
-            {
-                MostrarAlertaErro(ex.Message);
-            }
-            finally
-            {
-                PopularDropDowns();
-                await PreencherValoresMembros();
-            }
-        }
-
         private Cabeca ObterCabeca()
         {
             var cabeca = new Cabeca()
@@ -108,14 +108,14 @@ namespace R.O.B.O.Pages
                 Estado = (int)Constantes.DicionarioInclinacaoCamposTela[txtInclinacaoCabeca.Text]
             };
 
-            var estadoCabeca = dpdInclinacaoCabeca.SelectedValue == "" ? (int)Constantes.DicionarioInclinacaoCamposTela[txtInclinacaoCabeca.Text] : Convert.ToInt16(dpdInclinacaoCabeca.SelectedValue);
+            var estadoCabeca = dpdInclinacaoCabeca.SelectedValue == string.Empty ? (int)Constantes.DicionarioInclinacaoCamposTela[txtInclinacaoCabeca.Text] : Convert.ToInt16(dpdInclinacaoCabeca.SelectedValue);
 
             if (!Equals(estadoCabeca, (int)Constantes.DicionarioInclinacaoCamposTela[txtInclinacaoCabeca.Text]))
                 cabeca.VerificarAlteracaoEstado(estadoCabeca);
 
             cabeca.AlterarEstado(estadoCabeca);
 
-            var rotacaoCabeca = dpdRotacaoCabeca.SelectedValue == "" ? (int)Constantes.DicionarioRotacaoCamposTela[txtRotacaoCabeca.Text] : Convert.ToInt16(dpdRotacaoCabeca.SelectedValue);
+            var rotacaoCabeca = dpdRotacaoCabeca.SelectedValue == string.Empty ? (int)Constantes.DicionarioRotacaoCamposTela[txtRotacaoCabeca.Text] : Convert.ToInt16(dpdRotacaoCabeca.SelectedValue);
 
             if (!Equals(rotacaoCabeca, (int)Constantes.DicionarioRotacaoCamposTela[txtRotacaoCabeca.Text]))
                 cabeca.VerificarRotacaoCabeca(rotacaoCabeca);
@@ -135,14 +135,14 @@ namespace R.O.B.O.Pages
                 Pulso = new Pulso() { Nome = Constantes.DicionarioPulsoCriacaoBraco[membro], Rotacao = (int)Constantes.DicionarioRotacaoCamposTela[txtPulso.Text] }
             };
 
-            var estadoCotovelo = dropDownCotovelo.SelectedValue == "" ? braco.Cotovelo.Estado : Convert.ToInt16(dropDownCotovelo.SelectedValue);
+            var estadoCotovelo = dropDownCotovelo.SelectedValue == string.Empty ? braco.Cotovelo.Estado : Convert.ToInt16(dropDownCotovelo.SelectedValue);
 
             if (!Equals(estadoCotovelo, (int)Constantes.DicionarioEstadoCotoveloCamposTela[txtCotovelo.Text]))
                 braco.Cotovelo.VerificarAlteracaoEstado(estadoCotovelo);
 
             braco.Cotovelo.AlterarEstado(estadoCotovelo);
 
-            var rotacaoPulso = dropDownPulso.SelectedValue == "" ? braco.Pulso.Rotacao : Convert.ToInt16(dropDownPulso.SelectedValue);
+            var rotacaoPulso = dropDownPulso.SelectedValue == string.Empty ? braco.Pulso.Rotacao : Convert.ToInt16(dropDownPulso.SelectedValue);
             if (!Equals(rotacaoPulso, (int)Constantes.DicionarioRotacaoCamposTela[txtPulso.Text]))
             {
                 braco.Pulso.VerificarRotacaoPulso(braco.Cotovelo.Estado, Constantes.DicionarioCotoveloCriacaoBraco[membro]);

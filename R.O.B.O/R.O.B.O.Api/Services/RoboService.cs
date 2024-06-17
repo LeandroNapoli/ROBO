@@ -30,12 +30,29 @@ namespace R.O.B.O.Api.Services
 
         public IEnumerable<MembroViewModel> ObterMembrosViewModel(MembrosRobo membros)
         {
-            var membrosViewModel = new HashSet<MembroViewModel>() { new MembroViewModel { Nome = membros.Cabeca.Nome.ToString(), Estado = Constantes.DicionarioInclinacao[membros.Cabeca.Estado], Rotacao = Constantes.DicionarioRotacao[membros.Cabeca.Rotacao] } };
+            var membrosViewModel = new HashSet<MembroViewModel>() 
+            { 
+                new MembroViewModel 
+                { 
+                    Nome = membros.Cabeca.Nome.ToString(), 
+                    Estado = Constantes.DicionarioInclinacao[membros.Cabeca.Estado], 
+                    Rotacao = Constantes.DicionarioRotacao[membros.Cabeca.Rotacao] 
+                } 
+            };
 
             foreach (var braco in membros.Bracos)
             {
-                membrosViewModel.Add(new MembroViewModel { Estado = Constantes.DicionarioEstadoCotovelo[braco.Cotovelo.Estado], Nome = braco.Cotovelo.Nome.ToString() });
-                membrosViewModel.Add(new MembroViewModel { Nome = braco.Pulso.Nome.ToString(), Rotacao = Constantes.DicionarioRotacao[braco.Pulso.Rotacao] });
+                membrosViewModel.Add(new MembroViewModel 
+                { 
+                    Estado = Constantes.DicionarioEstadoCotovelo[braco.Cotovelo.Estado], 
+                    Nome = braco.Cotovelo.Nome.ToString() 
+                });
+
+                membrosViewModel.Add(new MembroViewModel 
+                { 
+                    Nome = braco.Pulso.Nome.ToString(), 
+                    Rotacao = Constantes.DicionarioRotacao[braco.Pulso.Rotacao] 
+                });
             }
 
             return membrosViewModel;

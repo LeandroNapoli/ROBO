@@ -10,11 +10,11 @@ namespace R.O.B.O.Api.Repositories
         private Braco _bracoEsquerdo;
         private Cabeca _cabeca;
 
-        public RoboRepository() 
+        public RoboRepository()
         {
             _bracoDireito = new Braco() { Nome = Membros.BracoDireito, Cotovelo = new Cotovelo() { Nome = Membros.CotoveloDireito }, Pulso = new Pulso() { Nome = Membros.PulsoDireito } };
             _bracoEsquerdo = new Braco() { Nome = Membros.BracoEsquerdo, Cotovelo = new Cotovelo() { Nome = Membros.CotoveloEsquerdo }, Pulso = new Pulso() { Nome = Membros.PulsoEsquerdo } };
-            _cabeca = new Cabeca();        
+            _cabeca = new Cabeca();
         }
 
         public MembrosRobo AtualizarMembros(MembrosRobo membros)
@@ -29,7 +29,7 @@ namespace R.O.B.O.Api.Repositories
 
             AtualizarCabeca(cabeca);
 
-            return new MembrosRobo() { Bracos = new HashSet<Braco> { _bracoDireito, _bracoEsquerdo}, Cabeca = _cabeca };
+            return new MembrosRobo() { Bracos = new HashSet<Braco> { _bracoDireito, _bracoEsquerdo }, Cabeca = _cabeca };
         }
 
         public MembrosRobo ObterMembros()
